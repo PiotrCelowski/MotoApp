@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="moto.app.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/mainConstraintLayout"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout android:id="@+id/zeroLayout" android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/fragmentView"
+            android:layout_marginBottom="75dp" android:orientation="horizontal"></LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/mapLayout"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:orientation="vertical" android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zeroLayout" tools:visibility="visible">
+
+            <com.mapbox.mapboxsdk.maps.MapView android:id="@+id/mapView"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="33dp" tools:layout_editor_absoluteY="52dp">
+
+            </com.mapbox.mapboxsdk.maps.MapView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView android:id="@+id/fragmentView"
+            android:name="moto.app.ConfigMenu" android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.35" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

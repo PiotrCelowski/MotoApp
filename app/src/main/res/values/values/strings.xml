@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MotoAppGoogleMaps</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoicGlvdHJjZWxvd3NraSIsImEiOiJja2dudTB2cWIyNTJmMnN0ZW56NXA3MmJ0In0.MZ2F6Wv-xDDNgpTKp15Nxw</string>
+    <string name="user_location_permission_explanation">Musisz udostępnić swoją lokalizację</string>
+    <string name="markPlace">Show</string>
+    <string name="navigate">Go</string>
+    <string name="example_location">53.4420490494609,14.501002182676</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="north_button">N</string>
+    <string name="south_button">S</string>
+    <string name="east_button">E</string>
+    <string name="west_button">W</string>
+    <string name="notification_channel_name">MotoAppLocationService</string>
+    <string name="notification_channel_description">Moto App Location Service</string>
+    <string name="channel_id">0</string>
+    <string name="notification_title">MotoApp</string>
+    <string name="notification_content">Korzysta z lokalizacji</string>
+
+</resources>

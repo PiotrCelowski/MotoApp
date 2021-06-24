@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="MotoApp" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textViewStyle">@style/textviews</item>
+        <item name="cardViewStyle">@style/card</item>
+        <item name="seekBarStyle">@style/seekDistanceBar</item>
+    </style>
+</resources>

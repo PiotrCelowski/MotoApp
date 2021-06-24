@@ -1,0 +1,5 @@
+package com.motoappcleancodemvc.presentation.route_generator.route_generator_controllers
+
+class RouteGeneratorUserConfiguresRouteController {
+
+}

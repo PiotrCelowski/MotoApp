@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="moto.app.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainConfigConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ConfigMenu">
+
+        <LinearLayout
+            android:id="@+id/zeroLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/mainConfigConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/card_corner">
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inputAndButtonsConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/zeroLayout1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inputCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-50dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/inputCoordinates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="24dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="@string/example_location"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/north_button"
+                        style="@style/directionButton"
+                        android:layout_width="@dimen/dir_button_side"
+                        android:layout_height="@dimen/dir_button_side"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="31dp"
+                        android:layout_marginBottom="41dp"
+                        android:text="@string/north_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/south_button"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/west_button"
+                        style="@style/directionButton"
+                        android:layout_width="@dimen/dir_button_side"
+                        android:layout_height="@dimen/dir_button_side"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/west_button"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/south_button"
+                        app:layout_constraintEnd_toStartOf="@+id/east_button"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/south_button" />
+
+                    <Button
+                        android:id="@+id/south_button"
+                        style="@style/directionButton"
+                        android:layout_width="@dimen/dir_button_side"
+                        android:layout_height="@dimen/dir_button_side"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/south_button"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/north_button"
+                        app:layout_constraintEnd_toStartOf="@+id/west_button"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/north_button" />
+
+                    <Button
+                        android:id="@+id/east_button"
+                        style="@style/directionButton"
+                        android:layout_width="@dimen/dir_button_side"
+                        android:layout_height="@dimen/dir_button_side"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/east_button"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/west_button"
+                        app:layout_constraintStart_toEndOf="@+id/west_button" />
+
+                    <TextView
+                        android:id="@+id/distanceDisplayer"
+                        style="@style/distDisplay"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{String.valueOf(viewModel.targetDistance)}"
+                        app:layout_constraintBottom_toBottomOf="@+id/distanceBar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/distanceBar"
+                        tools:text="200" />
+
+                    <SeekBar
+                        android:id="@+id/distanceBar"
+                        style="@style/seekDistanceBar"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:max="200"
+                        android:min="1"
+                        android:progress="70"
+                        android:splitTrack="false"
+                        app:layout_constraintBottom_toBottomOf="@+id/east_button"
+                        app:layout_constraintEnd_toStartOf="@+id/distanceDisplayer"
+                        app:layout_constraintStart_toEndOf="@+id/east_button"
+                        app:layout_constraintTop_toTopOf="@+id/east_button" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/zeroLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/main_button_neg_margin"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/inputAndButtonsConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/zeroLayout2">
+
+            <Button
+                android:id="@+id/markingButton"
+                style="@style/rightButton"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:text="@string/markPlace"
+                android:visibility="visible"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                app:layout_constraintBaseline_toBaselineOf="@+id/navigationButton"
+                app:layout_constraintStart_toEndOf="@+id/navigationButton" />
+
+            <Button
+                android:id="@+id/navigationButton"
+                style="@style/leftButton"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:text="@string/navigate"
+                android:visibility="visible"
+                android:drawableLeft="@drawable/ic_baseline_navigation_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/emptyTextView"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/emptyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

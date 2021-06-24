@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="leftButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:background">@drawable/left_button</item>
+    </style>
+    <style name="rightButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:background">@drawable/right_button</item>
+    </style>
+    <style name="directionButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:background">@drawable/dir_button_selector</item>
+    </style>
+    <style name="textviews" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:textColor">@color/input_text_color</item>
+        <item name="android:editTextBackground">@color/light</item>
+    </style>
+    <style name="card" parent="CardView">
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/light</item>
+        <item name="cardCornerRadius">@dimen/card_corner</item>
+    </style>
+    <style name="distDisplay" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="seekDistanceBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/progress_bar</item>
+        <item name="android:thumb">@drawable/scaled_helmet</item>
+    </style>
+</resources>
